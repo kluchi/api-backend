@@ -1,0 +1,4 @@
+environs
+pydantic
+fastapi
+uvicorn[standard]
