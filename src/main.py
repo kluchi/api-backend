@@ -18,7 +18,8 @@ class Config:
     base_path = env("API_BASE_PATH", "/")
 
 
-app = FastAPI()
+app = FastAPI(openapi_url="/api/openapi.json",
+              docs_url="/api/docs", redoc_url="/api/redoc")
 
 
 class User(pydantic.BaseModel):
