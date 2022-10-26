@@ -34,7 +34,10 @@ jobs:
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
+        env:
+          PYTHONPATH: src
         with:
           pylint: true
           flake8: true
           mypy: true
+          mypy_dir: src
