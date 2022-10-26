@@ -32,12 +32,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r dev-requirements.txt
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
+      - name: Run tests
         env:
           PYTHONPATH: src
-        with:
-          pylint: true
-          flake8: true
-          mypy: true
-          mypy_dir: src
+        run: pytest

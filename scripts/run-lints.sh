@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
-pylint src
-flake8 src
+export PYTHONPATH=src
+pylint src tests
+flake8 src tests
 mypy src
