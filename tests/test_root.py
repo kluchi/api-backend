@@ -1,3 +1,4 @@
+# pylint: disable=redefined-outer-name
 from fastapi.testclient import TestClient
 from pytest import fixture
 from main import app
