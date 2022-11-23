@@ -40,4 +40,5 @@ jobs:
           pylint: true
           flake8: true
           mypy: true
+          mypy_args: "--explicit-package-bases"
           mypy_dir: src
