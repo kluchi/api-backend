@@ -6,7 +6,8 @@ from repositories.user_repository import UserRepository
 
 class UserCreationData(BaseModel):
     email: EmailStr
-    password: str
+    first_name: str
+    last_name: str
 
 
 class CreateUser:

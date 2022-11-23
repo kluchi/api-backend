@@ -17,19 +17,30 @@ def repo():
 
 
 def test_usecase_should_save_on_user_creation(repo):
-    data = UserCreationData(email="example@mail.com", password="pass")
+    data = UserCreationData(email="example@mail.com",
+                            first_name="name",
+                            last_name="lastname")
     CreateUser(repo).run(data)
-    repo.save.assert_called_with(User(email="example@mail.com"))
+    repo.save.assert_called_with(
+        User(email="example@mail.com",
+             first_name="name",
+             last_name="lastname"))
 
 
 def test_usecase_should_check_if_user_already_exists(repo):
-    data = UserCreationData(email="example@mail.com", password="pass")
+    data = UserCreationData(email="example@mail.com",
+                            first_name="name",
+                            last_name="lastname")
     CreateUser(repo).run(data)
     repo.find_by_email.assert_called_with("example@mail.com")
-    repo.save.assert_called_with(User(email="example@mail.com"))
+    repo.save.assert_called_with(
+        User(email="example@mail.com",
+             first_name="name",
+             last_name="lastname"))
 
 
 def test_usecase_should_raise_exception_on_email_conflict(repo):
-    data = UserCreationData(email="existing@mail.com", password="pass")
+    data = UserCreationData(email="existing@mail.com",
+                            first_name="name", last_name="lastname")
     with pytest.raises(ValueError):
         CreateUser(repo).run(data)
