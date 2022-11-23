@@ -11,7 +11,8 @@ def repo():
     mock = Mock()
     mock.save = MagicMock(side_effect=lambda item: item)
     mock.find_by_email = MagicMock(
-        side_effect=lambda email: object() if email == "existing@mail.com" else None)
+        side_effect=lambda email:
+            object() if email == "existing@mail.com" else None)
     return mock
 
 
