@@ -1,4 +1,4 @@
 environs
-pydantic
+pydantic[email]
 fastapi
 uvicorn[standard]
