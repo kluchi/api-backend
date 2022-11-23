@@ -1,4 +1,6 @@
 #!/bin/bash
 set -e
 export PYTHONPATH=src
-pytest
+coverage run -m pytest
+coverage report
+coverage xml
